@@ -1,0 +1,31 @@
+@media only screen and (min-width: 1024px) {
+
+    .retour{
+        display: flex;
+        background-color:rgb(217, 222, 221);
+        width: 560px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        /*border-radius: 20px;*/
+        box-shadow: 0px 0px 15px -10px rgba(209, 248, 206, 0.26);
+        -webkit-box-shadow: 0x 0px 15px -10px rgba(0, 0, 0, 0.75);
+        font-size: 35px;
+        font-weight: 500; 
+        box-sizing: border-box;
+        
+    }
+    
+    .ind{
+    position: absolute;
+        right: 0%;
+    }
+    
+    p{
+        color: blue;
+    }
+}
+
+
+

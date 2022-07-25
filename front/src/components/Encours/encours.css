@@ -1,0 +1,31 @@
+@media only screen and (min-width: 1024px) {
+
+    .encours{
+        display: flex;
+        background-color:rgb(169, 232, 232);
+        width: 350px;
+        height: 150px;
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        /*border-radius: 20px;*/
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0x 0px 15px -10px rgba(0, 0, 0, 0.75);
+        font-size: 40px;
+        font-weight: 500;
+        box-sizing: border-box;
+        
+    }
+    
+    .ind{
+        position: absolute;
+        right: 0%;
+    }
+    
+    p{
+        color: blue;
+        margin-top: 7px;
+    }
+}
+
+
