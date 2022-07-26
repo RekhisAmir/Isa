@@ -29,7 +29,7 @@ const Eng = () => {
    var eng = 0; 
 
    for (let i = 0; i<=tab.length-1;i++){
-      (tab.indexOf(info[i]?.Pack_id)==i)?eng+=Number(info[i]?.quantity):eng=eng
+      (tab.indexOf(info[i]?.Pack_id)===i)?eng+=Number(info[i]?.quantity):eng=eng
    }
 
 

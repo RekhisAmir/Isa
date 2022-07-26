@@ -5,15 +5,15 @@ import './controle.css'
 const Controle = () => {
 
   const [info, setInfo] = useState([])
-  const [info2, setfInfo2] = useState([])
+  //const [info2, setfInfo2] = useState([])
 
   useEffect(() => {
     const fetchData = async()=>{
         try {
             const res = await axios.get('http://localhost:4000/controle')
-            const res2 = await axios.get('http://localhost:4000/operations')
+            //const res2 = await axios.get('http://localhost:4000/operations')
             setInfo(res.data)
-            setfInfo2(res2.data)
+            //setfInfo2(res2.data)
             console.log(res.data)
         } catch (error) {
             console.log(error)
@@ -22,20 +22,19 @@ const Controle = () => {
     fetchData()
   }, [])
 
-  var count = 0; var prod = 0;
+  var defect = 0; var prod = 0;
 
-  for (let i=0; i<info.length;i++){
-      count+=Number(info[i]?.QtePD)
+  for (let i=0; i<info.length-1;i++){
+      defect+=Number(info[i]?.QtePD)
   }
 
-  for (let i = 0; i<=info2.length-1;i++){
-    (info2[i]?.Operation_name.slice(0,5)==="Contr")||(info2[i]?.Operation_name.slice(0,5)==="contr")?
-    prod+=Number(info2[i]?.quantity):prod=prod
+  for (let i = 0; i<=info.length-1;i++){
+    prod+=Number(info[i]?.Qte)
 }
 
   return (
     
-    <div className='retour'><p>Indice qualité BC</p><div className='ind'>{Math.round((count/prod)*100)}%</div></div>
+    <div className='retour'><p>Indice qualité BC</p><div className='ind'>{Math.round((defect/prod)*100)}%</div></div>
   )
 }
 

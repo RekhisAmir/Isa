@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 var pool = mysql.createConnection({
     host:'localhost',
-    database:'isa',
+    database:'db_isa',
     user:'root',
     password:''
 })
@@ -25,11 +25,11 @@ app.get('/operations', (req,res)=>{
 })
 
 app.get('/controle',(req,res)=>{
-  pool.query('SELECT QtePD FROM controle_packet',(err,rows)=>{err?res.send(err):res.send(rows)})
+  pool.query('SELECT  Qte, QtePD FROM controle_packet',(err,rows)=>{err?res.send(err):res.send(rows)})
 })
 
 app.get('/performance', (req,res)=>{
-  pool.query('SELECT performance, cur_day FROM performances', (err,rows)=>{err?res.send(err):res.send(rows)})
+  pool.query('SELECT performance, cur_day FROM performance_per_hour', (err,rows)=>{err?res.send(err):res.send(rows)})
 })
 
 

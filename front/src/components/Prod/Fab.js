@@ -7,7 +7,7 @@ const Fab = () => {
     useEffect(() => {
        const fetchData = async()=>{
            try {
-               const res = await axios.get('http://localhost:4000/operations')
+               const res = await axios.get('http://localhost:4000/controle')
                setInfo(res.data)
                console.log(res.data)
            } catch (error) {
@@ -25,9 +25,13 @@ const Fab = () => {
       (info[i]?.N_pipelette!==info[i+1]?.N_pipelette)&(info[i]?.T_end!=null)?prod+=Number(info[i]?.Qte):prod=prod
   }*/
 
-  for (let i = 0; i<=info.length-1;i++){
+ /* for (let i = 0; i<=info.length-1;i++){
     (info[i]?.Operation_name.slice(0,5)==="Contr")||(info[i]?.Operation_name.slice(0,5)==="contr")?
     prod+=Number(info[i]?.quantity):prod=prod
+}*/
+
+for (let i = 0; i<=info.length-1;i++){
+  prod+=Number(info[i]?.Qte)
 }
   
   return (
