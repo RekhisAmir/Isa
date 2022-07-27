@@ -5,12 +5,15 @@ import axios from 'axios'
 const Encours = () => {
 
     const [info, setInfo] = useState([])
+    const [info2, setInfo2] = useState([])
 
     useEffect(() => {
       const fetchData = async()=>{
           try {
-              const res = await axios.get('http://localhost:4000/operations')
+              const res = await axios.get('http://localhost:4000/alloperations')
+              const res2 = await axios.get('http://localhost:4000/allcontrole')
               setInfo(res.data)
+              setInfo2(res2.data)
               console.log(res.data)
           } catch (error) {
               console.log(error)
@@ -40,10 +43,9 @@ const Encours = () => {
       (tab.indexOf(info[i]?.Pack_id)==i)?eng+=Number(info[i]?.quantity):eng=eng
    }
 
-   for (let i = 0; i<=info.length-1;i++){
-    (info[i]?.Operation_name.slice(0,5)==="Contr")||(info[i]?.Operation_name.slice(0,5)==="contr")?
-    prod+=Number(info[i]?.quantity):prod=prod
-}
+   for (let i = 0; i<=info2.length-1;i++){
+    prod+=Number(info2[i]?.Qte)
+  }
    
 
   return (

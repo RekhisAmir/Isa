@@ -24,7 +24,7 @@ const Controle = () => {
 
   var defect = 0; var prod = 0;
 
-  for (let i=0; i<info.length-1;i++){
+  for (let i=0; i<info.length;i++){
       defect+=Number(info[i]?.QtePD)
   }
 

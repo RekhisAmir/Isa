@@ -25,7 +25,8 @@ const Eng = () => {
        (info[i]?.N_pipelette!==info[i+1]?.N_pipelette)&(info[i+1]?.T_start!=null)?eng+=Number(info[i+1]?.Qte):eng=eng
    }
    console.log(eng)*/
-   let tab = info.map(el=>el.Pack_id)
+ 
+    let tab = info.map(el=>el.Pack_id)
    var eng = 0; 
 
    for (let i = 0; i<=tab.length-1;i++){
