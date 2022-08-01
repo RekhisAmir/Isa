@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 var pool = mysql.createConnection({
     host:'localhost',
-    database:'db_isa',
+    database:'db_etc',
     user:'root',
     password:''
 })
