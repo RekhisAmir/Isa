@@ -23,13 +23,13 @@ function App() {
    }, [])*/
   return (
     <div className="App">
-      <h1>Chaine ISA 201</h1>
+      <h1>Chaine 01 Ligne Dos</h1>
       <div className='container'>
        <Eng/>
        <Fab/>
        <Encours/>
        <Rend201/>
-       <Controle/>
+       
       </div>
     </div>
   );

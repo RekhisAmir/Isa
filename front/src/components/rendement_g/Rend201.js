@@ -29,12 +29,12 @@ const Rend201 = () => {
     sum+=tab[i]?.performance
   }
 
-  var rend = sum/(tab.length)
+  var rend = tab.length !==0 ?sum/(tab.length):0
 
 
 
   return (
-    <div className='rend'><p>Rendement ISA 201</p><div className='ind'>{rend*100}%</div></div>
+    <div className='rend'><p>Rendement Ligne Dos</p><div className='ind'>{rend*100}%</div></div>
   )
 }
 

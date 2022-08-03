@@ -7,7 +7,11 @@ const Fab = () => {
     useEffect(() => {
        const fetchData = async()=>{
            try {
+<<<<<<< HEAD
                const res = await axios.get('http://localhost:4000/allcontrole')
+=======
+               const res = await axios.get('http://localhost:4000/alloperations')
+>>>>>>> 598ad4cd70ece14850c8de2173e9a40967433a32
                setInfo(res.data)
                console.log(res.data)
            } catch (error) {
@@ -25,17 +29,17 @@ const Fab = () => {
       (info[i]?.N_pipelette!==info[i+1]?.N_pipelette)&(info[i]?.T_end!=null)?prod+=Number(info[i]?.Qte):prod=prod
   }*/
 
- /* for (let i = 0; i<=info.length-1;i++){
-    (info[i]?.Operation_name.slice(0,5)==="Contr")||(info[i]?.Operation_name.slice(0,5)==="contr")?
+  for (let i = 0; i<=info.length-1;i++){
+    (info[i]?.Operation_name.slice(0,5)==="CONTR")||(info[i]?.Operation_name.slice(0,5)==="contr")?
     prod+=Number(info[i]?.quantity):prod=prod
-}*/
-
-for (let i = 0; i<=info.length-1;i++){
-  prod+=Number(info[i]?.Qte)
 }
+
+/*for (let i = 0; i<=info.length-1;i++){
+  prod+=Number(info[i]?.Qte)
+}*/
   
   return (
-    <div className='fab'><p>Qté Fab</p><div className='ind'>{prod}</div></div>
+    <div className='fab'><p>Sortie Dos</p><div className='ind'>{prod}</div></div>
   )
 }
 
