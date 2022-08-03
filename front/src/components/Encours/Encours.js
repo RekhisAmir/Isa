@@ -40,7 +40,7 @@ const Encours = () => {
    var eng = 0; var prod = 0; 
 
    for (let i = 0; i<=tab.length-1;i++){
-      (tab.indexOf(info[i]?.Pack_id)==i)?eng+=Number(info[i]?.quantity):eng=eng
+      (tab.indexOf(info[i]?.Pack_id)===i)?eng+=Number(info[i]?.quantity):eng=eng
    }
 
    for (let i = 0; i<=info2.length-1;i++){

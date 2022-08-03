@@ -7,7 +7,7 @@ const Fab = () => {
     useEffect(() => {
        const fetchData = async()=>{
            try {
-               const res = await axios.get('http://localhost:4000/controle')
+               const res = await axios.get('http://localhost:4000/allcontrole')
                setInfo(res.data)
                console.log(res.data)
            } catch (error) {
